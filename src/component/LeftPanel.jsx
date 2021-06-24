@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RightPanel from './RightPanel'
 
 const LeftPanel = ({}) => {
@@ -6,14 +6,12 @@ const LeftPanel = ({}) => {
   const [truthyValue, setTruthyValue] = useState("0000FF");
   const [errorMessage, setErrorMessage] = useState('');
 
-// useEffect
-
   console.log('tv',truthyValue);
 
   const submithandler = (e) => {
     e.preventDefault();
     const isHexColor = (setColor) =>
-      typeof setColor === "string" && setColor.length === 6 && !isNaN(Number("0x" + setColor));
+      typeof setColor === "string" && setColor.length === 6&3 && !isNaN(Number("0x" + setColor));
 
       console.log(isHexColor(color)) 
       console.log(color) 
